@@ -1,2 +1,2 @@
 
-console.log('sync started!!!');
+console.log('sync failed!!!!!!');

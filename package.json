@@ -1,0 +1,22 @@
+{
+  "name": "git-demo",
+  "version": "1.0.0",
+  "description": "This is a demo app",
+  "main": "login.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mufeez/Git-Demo.git"
+  },
+  "author": "Mufeez Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mufeez/Git-Demo/issues"
+  },
+  "homepage": "https://github.com/Mufeez/Git-Demo#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

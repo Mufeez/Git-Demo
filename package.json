@@ -4,6 +4,8 @@
   "description": "This is a demo app",
   "main": "login.ts",
   "scripts": {
+    "start": "tsc && node dist/login.js",
+    "dev": "nodemon --watch '**.ts' --exec 'ts-node' login.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,12 @@
   },
   "homepage": "https://github.com/Mufeez/Git-Demo#readme",
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.19.2"
   }
 }

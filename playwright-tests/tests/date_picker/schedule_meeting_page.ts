@@ -2,6 +2,7 @@ import { Page } from 'playwright-core';
 
 class ScheduleMeetingPage {
     static SCHEDULED_DATE = '#datePicker';
+    static YEAR = '.ui-datepicker-year';
 
     static selectDate = async (
         page: Page,
@@ -10,10 +11,10 @@ class ScheduleMeetingPage {
         day: string
     ) => {
         await page.goto('https://testautomationpractice.blogspot.com');
-        await page.click('#datepicker');
+        await page.click(ScheduleMeetingPage.SCHEDULED_DATE);
         while (true) {
             const current_year = await page
-                .locator('.ui-datepicker-year')
+                .locator(ScheduleMeetingPage.YEAR)
                 .textContent();
             const current_month = await page
                 .locator('.ui-datepicker-month')
@@ -33,10 +34,11 @@ class ScheduleMeetingPage {
                 break;
             }
         }
-        // await page.click(`//a[@class='.ui-state-default']['text()="${date}"']`);
         await page.keyboard.press('Enter');
         await page.waitForTimeout(5000);
-        const date = await page.locator('#datepicker').inputValue();
+        const date = await page
+            .locator(ScheduleMeetingPage.SCHEDULED_DATE)
+            .inputValue();
         return date;
     };
 

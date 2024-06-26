@@ -1,10 +1,25 @@
 {
   "name": "Git-Demo",
   "packageManager": "yarn@3.2.2",
+  "scripts": {
+    "test": "playwright test playwright-tests/tests/hubspot/login.spec.ts",
+    "format": "prettier --write \"playwright-tests/**/*.{ts,js}\"",
+    "lint": "eslint \"playwright-tests/**/*.{ts,js}\"",
+    "lintAndFormat": "npm run format && npm run lint",
+    "generateOppsyncData": "ts-node playwright-tests/scripts/generateOppSyncData.ts",
+    "prepare": "husky",
+    "update-branch": "git pull origin main && yarn install"
+  },
   "devDependencies": {
     "@playwright/test": "^1.44.0",
     "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^8.36.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
     "nodemon": "3.1.0",
+    "prettier": "^3.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
